@@ -37,13 +37,13 @@
 				<?php
 			else :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
 				<?php
 			endif;
 			$perfection_portfolio_description = get_bloginfo( 'description', 'display' );
 			if ( $perfection_portfolio_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $perfection_portfolio_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+				<div class="site-description"><?php echo $perfection_portfolio_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
