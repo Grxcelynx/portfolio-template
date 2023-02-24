@@ -655,21 +655,24 @@ ul {
   float: left;
   margin: 0px 10px;
   height: auto;
-  width: 520px;
+  width: 630px;
 }
-.site-header .site-branding .site-description, .site-header .site-branding .site-title {
+.site-header .site-branding .site-description, .site-header .site-branding .site-title, .site-header .site-branding img {
   display: inline-block !important;
   text-decoration: none;
-  margin: 18px 20px 16px 20px;
+  margin: 18px 15px 16px 15px;
+}
+.site-header .site-branding .custom-logo-link {
+  height: 30px;
 }
 .site-header .site-branding a {
+  float: left;
   text-decoration: none;
+  position: relative;
 }
 .site-header .site-branding a img {
-  padding: 3%;
-  height: 50px;
-  width: 40px;
-  margin: 0%;
+  height: 30px;
+  width: 30px;
 }
 
 .main-navigation {
@@ -805,6 +808,12 @@ ul {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
+.about-section {
+  padding: 0px 100px;
+}
+.about-section :where(.wp-block-columns.is-layout-flex) {
+  gap: 3em !important;
+}
 /* Front Page
 --------------------------------------------- */
 /* Comments

@@ -62,3 +62,21 @@
         }
     }
 }
+
+
+//ABOUT SECTION 
+//////////////////////////////////
+.about-section {
+    :where(.wp-block-columns.is-layout-flex){
+        gap: 3em !important;
+    }
+    padding: 0px 100px;
+
+
+    .wp-block-columns{
+
+        .wp-block-column{
+
+        }
+    }
+}

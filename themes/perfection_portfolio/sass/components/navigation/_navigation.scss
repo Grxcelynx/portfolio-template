@@ -53,21 +53,27 @@ ul {
 			float: left;
 			margin: 0px 10px;
 			height:auto;
-			width:520px;
+			width:630px;
 			
-		.site-description, .site-title{
+		.site-description, .site-title, img{
 			display: inline-block !important;
 			text-decoration: none;
-			margin: 18px 20px 16px 20px;
+			margin: 18px 15px 16px 15px;
+			
 		}
+		
 
+		.custom-logo-link{
+			height: 30px;
+		}
 		a {
+			float: left;
+			// margin: 10px auto;
 			text-decoration: none;
+			position: relative;
 			img {
-				padding: 3%;
-				height:50px;
-				width:40px;
-				margin: 0%;
+				height:30px;
+				width:30px;
 			}
 		}
 	}
