@@ -1,0 +1,18 @@
+.post-edit-link{
+    display: none;
+}
+
+@media screen and (max-width:757px) {
+    .footer{
+        padding: 0px 20px;
+
+        h2{
+            margin-top: 40px;
+            font-size: 30px !important;
+        }
+
+        .wp-block-site-tagline{
+            margin: 20px auto;
+        }
+    } 
+}

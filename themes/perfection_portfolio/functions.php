@@ -176,3 +176,75 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function theme_get_customizer_css() {
+	ob_start();
+
+  //CALL TO ACTION BTN BACKGROUND
+	$navbkgd = get_theme_mod( 'customize_navcolor', '' );
+		if ( ! empty( $navbkgd ) ) {
+			?>
+			
+			.site-header{
+					background-color: <?php echo $navbkgd; ?> ;
+				}
+			
+			<?php
+	}
+
+	$navtext = get_theme_mod( 'customize_navtext_color', '' );
+		if ( ! empty( $navtext ) ) {
+			?>
+			
+			.site-title a, .main-navigation a, .site-description{
+					color: <?php echo $navtext; ?> ;
+				}
+			
+			<?php
+		}
+
+
+	$mobilebkgd = get_theme_mod( 'customize_navmobile_color', '' );
+		if ( ! empty( $mobilebkgd ) ) {
+		?>
+		
+		.main-navigation.toggled ul{
+				background: linear-gradient(to left, <?php echo $mobilebkgd; ?>, transparent);
+			}
+		
+		<?php
+		}
+
+	$navhover = get_theme_mod( 'customize_navhov_color', '' );
+		if ( ! empty( $navhover ) ) {
+		?>
+		
+		.main-navigation ul li a:hover{
+				border-bottom: solid 2px <?php echo $navhover; ?>;
+			}
+		
+		<?php
+		}
+
+	$burger = get_theme_mod( 'customize_burgermenu_color', '' );
+		if ( ! empty( $burger ) ) {
+		?>
+		
+		.burger-menu{
+				color: <?php echo $burger; ?>;
+			}
+		
+		<?php
+		}
+
+	$css = ob_get_clean();
+	return $css;
+}
+
+
+function theme_enqueue_styles() {
+	wp_enqueue_style( 'theme-styles', get_stylesheet_uri() ); // This is where you enqueue your theme's main stylesheet
+	$custom_css = theme_get_customizer_css();
+	wp_add_inline_style( 'theme-styles', $custom_css );
+}
+
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );

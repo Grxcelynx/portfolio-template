@@ -606,6 +606,11 @@ textarea {
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
+.site-main, .page-name {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
 h1, h2, h3, h4, h5, h6, a {
   font-family: "Fira Sans", sans-serif;
 }
@@ -645,6 +650,7 @@ ul {
 .site-header {
   height: 60px;
   width: 100%;
+  float: left;
   position: sticky;
   top: 0;
   z-index: 99999;
@@ -655,12 +661,17 @@ ul {
   float: left;
   margin: 0px 10px;
   height: auto;
-  width: 630px;
+  width: 500px;
 }
-.site-header .site-branding .site-description, .site-header .site-branding .site-title, .site-header .site-branding img {
-  display: inline-block !important;
+.site-header .site-branding .site-title, .site-header .site-branding img {
   text-decoration: none;
-  margin: 18px 15px 16px 15px;
+  margin: 18px 10px 10px 10px;
+  float: left;
+}
+.site-header .site-branding .site-description {
+  font-size: 14px;
+  margin: 22px 10px 10px 10px;
+  float: left;
 }
 .site-header .site-branding .custom-logo-link {
   height: 30px;
@@ -673,6 +684,9 @@ ul {
 .site-header .site-branding a img {
   height: 30px;
   width: 30px;
+}
+.site-header .site-branding a img:hover {
+  filter: drop-shadow(0 5px 5px rgb(254, 251, 251));
 }
 
 .main-navigation {
@@ -719,12 +733,68 @@ ul {
   margin: 18px 20px;
 }
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
+.menu-toggle {
   display: block;
+  padding: 0 20px 0 0;
+  margin: 20px auto 10px auto;
+  position: absolute;
+  right: 2px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: "Aboreto", cursive;
+  line-height: 18px;
 }
 
-@media screen and (min-width: 37.5em) {
+.main-navigation.toggled {
+  display: block;
+  right: 0px;
+  width: 100%;
+}
+.main-navigation.toggled .menu-primary-menu-container {
+  width: 50%;
+  text-align: center;
+}
+.main-navigation.toggled ul {
+  width: 25%;
+  display: block;
+  position: absolute;
+  height: auto;
+  right: 0;
+  margin: 90px 0 0 1px;
+  transform: translateX(0%);
+  transition: transform 5s ease-in;
+  text-align: center;
+  font-size: 14px;
+}
+.main-navigation.toggled ul li a {
+  text-align: center;
+  padding: 0%;
+  width: 100%;
+}
+
+.burger-menu {
+  display: flex;
+  font-weight: 600;
+  font-size: 1.8rem;
+  padding: 4%;
+  margin: 0%;
+}
+
+@media screen and (max-width: 960px) {
+  .site-header {
+    height: 90px;
+  }
+  .site-header .site-branding {
+    width: 260px;
+  }
+  .site-header .site-branding .site-description {
+    margin: 5px 10px 5px 10px;
+  }
+}
+@media screen and (min-width: 44.5em) {
   .menu-toggle {
     display: none;
   }
@@ -756,6 +826,22 @@ ul {
 
 /* Footer
 --------------------------------------------- */
+.post-edit-link {
+  display: none;
+}
+
+@media screen and (max-width: 757px) {
+  .footer {
+    padding: 0px 20px;
+  }
+  .footer h2 {
+    margin-top: 40px;
+    font-size: 30px !important;
+  }
+  .footer .wp-block-site-tagline {
+    margin: 20px auto;
+  }
+}
 /* Posts and pages
 --------------------------------------------- */
 .sticky {
@@ -776,6 +862,10 @@ ul {
   margin: 0px auto;
 }
 
+.wp-block-column .wp-block-button__link:hover {
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 1px 4px;
+}
+
 .projects-pattern .wp-block-columns {
   padding: 0px 50px;
 }
@@ -783,7 +873,7 @@ ul {
   padding: 0px 5px;
 }
 .projects-pattern .wp-block-columns .wp-block-column .wp-block-buttons:hover {
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 1px 4px;
 }
 .projects-pattern .wp-block-columns h2, .projects-pattern .wp-block-columns h5 {
   margin: 0px auto 10px auto;
@@ -792,9 +882,23 @@ ul {
   object-fit: contain;
 }
 .projects-pattern .wp-block-columns figure img {
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 1px 4px;
 }
 
+@media screen and (max-width: 757px) {
+  .projects-pattern .wp-block-group__inner-container h2 {
+    font-size: 35px !important;
+  }
+  .projects-pattern .wp-block-group__inner-container .wp-block-columns {
+    padding: 0px 20px;
+  }
+  .projects-pattern .wp-block-group__inner-container .wp-block-columns .wp-block-column p {
+    padding: 0px 5px;
+  }
+  .projects-pattern .wp-block-group__inner-container .wp-block-columns h2, .projects-pattern .wp-block-group__inner-container .wp-block-columns h5 {
+    margin: 0px auto 10px auto;
+  }
+}
 .small-excerpt :where(.wp-block-columns.is-layout-flex) {
   gap: 0;
 }
@@ -805,17 +909,79 @@ ul {
   padding: 0px 200px;
 }
 .small-excerpt .wp-block-columns .wp-block-column .wp-block-button__link:hover {
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 1px 4px;
 }
 
+@media screen and (max-width: 857px) {
+  .small-excerpt h2 {
+    padding: 0px 100px 0px 100px;
+  }
+  .small-excerpt .wp-block-columns {
+    padding: 0px 50px 0px 140px;
+  }
+  .small-excerpt .wp-block-columns .wp-block-column {
+    text-align: center;
+  }
+  .small-excerpt .wp-block-columns .wp-block-column p {
+    margin: 0px auto 30px auto;
+  }
+}
+@media screen and (max-width: 757px) {
+  .small-excerpt h2 {
+    padding: 0px 20px;
+    font-size: 23px;
+  }
+  .small-excerpt .wp-block-columns {
+    padding: 0px 20px;
+  }
+  .small-excerpt .wp-block-columns .wp-block-column {
+    text-align: center;
+  }
+  .small-excerpt .wp-block-columns .wp-block-column p {
+    margin: 0px auto 30px auto;
+  }
+  .small-excerpt .wp-block-columns .wp-block-column .wp-block-button__link {
+    font-size: 10px;
+  }
+  .small-excerpt .wp-block-columns .wp-block-column .wp-block-button__link:hover {
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 1px 4px;
+  }
+}
 .about-section {
   padding: 0px 100px;
 }
 .about-section :where(.wp-block-columns.is-layout-flex) {
   gap: 3em !important;
 }
+@media screen and (max-width: 757px) {
+  .about-section {
+    padding: 0px 20px;
+  }
+  .about-section :where(.wp-block-columns.is-layout-flex) {
+    gap: 2em !important;
+  }
+}
 /* Front Page
 --------------------------------------------- */
+@media screen and (max-width: 759px) {
+  blockquote {
+    display: block;
+    margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+  }
+  .wp-block-quote.is-style-large:not(.is-style-plain) p {
+    font-size: 14px;
+  }
+  .wp-block-quote.is-style-large:not(.is-style-plain) {
+    margin-bottom: 0.3em;
+    padding: 0 0.2em;
+  }
+  .wp-block-quote.is-style-large:not(.is-style-plain) cite {
+    font-size: 11px;
+  }
+}
 /* Comments
 --------------------------------------------- */
 .comment-content a {
