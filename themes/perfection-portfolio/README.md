@@ -1,0 +1,55 @@
+This theme Perfection Portfolio is designed as a template for individuals to0 showcase their work and talents to the world. Listed below are the custom features and layout of this template:
+
+* Custom Gutenberg Block Patterns: premade patterns on the dashboard under 'Custom Patterns' to quickly build out your site and add more features.
+* Custom Color settings of the navigation bar for anyone to adjust the template to whatever color scheme you desire.
+* One page portfolio site designed to display all of your work in one clean space.
+
+Installation
+---------------
+
+### Requirements
+
+Perfection Portfolio requires the following dependencies:
+
+- [Node.js](https://nodejs.org/)
+- [Composer](https://getcomposer.org/)
+
+### Quick Start
+
+Clone or download this repository, change its name to something else (like, say, `megatherium-is-awesome`), and then you'll need to do a six-step find and replace on the name in all the templates.
+
+1. Search for `'perfection-portfolio'` (inside single quotations) to capture the text domain and replace with: `'megatherium-is-awesome'`.
+2. Search for `perfection_portfolio` to capture all the functions names and replace with: `megatherium_is_awesome_`.
+3. Search for `Text Domain: perfection-portfolio` in `style.css` and replace with: `Text Domain: megatherium-is-awesome`.
+4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks and replace with: <code>&nbsp;Megatherium_is_Awesome</code>.
+5. Search for `perfection-portfolio` to capture prefixed handles and replace with: `megatherium-is-awesome-`.
+6. Search for `PERFECTION-PORTFOLIO` (in uppercase) to capture constants and replace with: `MEGATHERIUM_IS_AWESOME_`.
+
+Then, update the stylesheet header in `style.css`, the links in `footer.php` with your own information and rename `perfection-portfolio.pot` from `languages` folder to use the theme's slug. Next, update or delete this readme.
+
+### Setup
+
+To start using all the tools that come with Perfection Portfolio  you need to install the necessary Node.js and Composer dependencies :
+
+```sh
+$ composer install
+$ npm install
+```
+
+### Available CLI commands
+
+Perfection Portfolio comes packed with CLI commands tailored for WordPress theme development :
+
+- `composer lint:wpcs` : checks all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
+- `composer lint:php` : checks all PHP files for syntax errors.
+- `composer make-pot` : generates a .pot file in the `languages/` directory.
+- `npm run compile:css` : compiles SASS files to css.
+- `npm run compile:rtl` : generates an RTL stylesheet.
+- `npm run watch` : watches all SASS files and recompiles them to css when they change.
+- `npm run lint:scss` : checks all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
+- `npm run lint:js` : checks all JavaScript files against [JavaScript Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/).
+- `npm run bundle` : generates a .zip archive for distribution, excluding development and system files.
+
+Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
+
+Good luck!
